@@ -6,8 +6,8 @@ export default function Page() {
     <div>
       <h1>Hello World, This is the home page of this app!</h1>
       <Link href="/shop-ease">
-        <a>ShopEase</a>
+        ShopEase
       </Link>
     </div>
-  )
+  );
 }
