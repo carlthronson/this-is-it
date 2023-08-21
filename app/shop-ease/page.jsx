@@ -1,4 +1,15 @@
 // `app/shop-ease/page.js` is the UI for the `/shop-ease/` URL
-export default function Page() {
-  return <h1>Welcome to ShopEase</h1>
+'use client'
+import styled from 'styled-components';
+import KanbanBoard from '../../components/Kanbanboard';
+
+const TextContent = styled.div``;
+
+export default function Page({ wines}) {
+  return <div>
+    <ht>ShopEase</ht>
+    <div>
+      <KanbanBoard></KanbanBoard>
+    </div>
+  </div>
 }
