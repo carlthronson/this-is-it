@@ -4,6 +4,7 @@
   "description": "No description yet",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_OPTIONS='-r next-logger' next dev",
     "test": "next dev"
   },
   "author": "",
@@ -11,6 +12,7 @@
   "dependencies": {
     "antd": "^5.8.4",
     "next": "^13.4.19",
+    "next-logger": "^3.0.2",
     "react-beautiful-dnd": "^13.1.1",
     "styled-components": "^6.0.7"
   }
