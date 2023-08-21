@@ -31,29 +31,29 @@ const TaskList = styled.div`
 
 export default function Column({ title, tasks, id }) {
     return (
-      <Container className='column'>
-        <Title
-            style={{
-                backgroundColor: 'lightblue',
-                position: 'stick',
-            }}
-        >
-            {title}
-        </Title>
-        <Droppable droppableId={id}>
-            {(provided, snapshot) => (
-                <TaskList
-                    ref={provided.innerRef}
-                    {...provided.droppableProps}
-                    isdraggingover={snapshot.isDraggingOver}
->
-            {tasks.map((task, index) => (
-              <Task key={index} index={index} task={task} />
-            ))}
-                    {provided.placeholder}
-                </TaskList>
-            )}
-        </Droppable>
-    </Container>
+        <Container className='column'>
+            <Title
+                style={{
+                    backgroundColor: 'lightblue',
+                    position: 'stick',
+                }}
+            >
+                {title}
+            </Title>
+            <Droppable droppableId={id}>
+                {(provided, snapshot) => (
+                    <TaskList
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        isdraggingover={snapshot.isDraggingOver}
+                    >
+                        {tasks.map((task, index) => (
+                            <Task key={index} index={index} task={task} />
+                        ))}
+                        {provided.placeholder}
+                    </TaskList>
+                )}
+            </Droppable>
+        </Container>
     );
 }
