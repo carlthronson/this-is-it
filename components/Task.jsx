@@ -26,30 +26,30 @@ const Icons = styled.div`
     padding: 2px;
 `   ;
 function bgcolorChange(props) {
-    return props.isDragging
-        ? 'lightgreen'
-        : props.isDraggable
-            ? props.isBacklog
-                ? '#F2D7D5'
-                : '#DCDCDC'
-            : props.isBacklog
-                ? '#F2D7D5'
-    : '#EAF4FC';
+  return props.isDragging
+    ? 'lightgreen'
+    : props.isDraggable
+      ? props.isBacklog
+        ? '#F2D7D5'
+        : '#DCDCDC'
+      : props.isBacklog
+        ? '#F2D7D5'
+        : '#EAF4FC';
 }
 
 export default function Task({ task, index }) {
   return (
     <Draggable draggableId={`${task.id}`} key={task.id} index={index}>
-            {(provided, snapshot) => (
-                <Container
-                    {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                    ref={provided.innerRef}
-                    isDragging={snapshot.isDragging}
-                    >
+      {(provided, snapshot) => (
+        <Container
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+          isDragging={snapshot.isDragging}
+        >
           <div style={{ display: 'flex', justifyContent: 'start', padding: 2 }}>
             <span>
-              <img src="/foo.png"/>
+              <img src="/foo.png" />
               <small>
                 #{task.id}
                 {'  '}
@@ -59,8 +59,8 @@ export default function Task({ task, index }) {
           <div
             style={{ display: 'flex', justifyContent: 'center', padding: 2 }}
           >
-    <TextContent>{task.product}</TextContent>
-</div>
+            <TextContent>{task.product}</TextContent>
+          </div>
           <Icons>
             <div>
               <Avatar
@@ -69,7 +69,7 @@ export default function Task({ task, index }) {
               />
             </div>
           </Icons>
-{ provided.placeholder }
+          {provided.placeholder}
         </Container>
       )}
     </Draggable >
