@@ -49,7 +49,6 @@ export default function Task({ task, index }) {
         >
           <div style={{ display: 'flex', justifyContent: 'start', padding: 2 }}>
             <span>
-              <img src="/foo.png" />
               <small>
                 #{task.id}
                 {'  '}
@@ -59,7 +58,7 @@ export default function Task({ task, index }) {
           <div
             style={{ display: 'flex', justifyContent: 'center', padding: 2 }}
           >
-            <TextContent>{task.product}</TextContent>
+            <TextContent>{task.title}</TextContent>
           </div>
           <Icons>
             <div>
