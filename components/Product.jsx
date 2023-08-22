@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Avatar, Image } from 'antd';
+import { Avatar, Col, Grid, Image } from 'antd';
+import Column from 'antd/es/table/Column';
 
 const Container = styled.div`
     border-radius: 10px;
@@ -14,10 +15,42 @@ const Container = styled.div`
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
 `   ;
 
-const TextContent = styled.div``;
+const ContainerChild = styled.div`
+    border-radius: 10px;
+  box-shadow: 5px 5px 5px 2px grey;
+    padding: 8px;
+    color: #000;
+    margin-bottom: 8px;
+    min-height: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: 'lightgreen';
+    cursor: pointer;
+    // display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex: 1 0 50%;
+`   ;
+
+const ProductName = styled.h4`
+color: maroon;
+margin-top: 2px;
+`;
+
+const Varietal = styled.div`
+color: orange;
+`;
+
+const Appellation = styled.div`
+font-weight: bold
+`;
+
+const Styles = styled.div`
+margin-top: 20px;
+`;
 
 const Icons = styled.div`
     display: flex;
@@ -36,31 +69,41 @@ function bgcolorChange(props) {
         : '#EAF4FC';
 }
 
+const ProductDetails = styled.div`
+border-radius: 10px;
+// box-shadow: 5px 5px 5px 2px grey;
+  padding: 8px;
+  color: #000;
+  margin-bottom: 8px;
+  min-height: 90px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: 'lightgreen';
+  cursor: pointer;
+  // display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex: 1 0 75%;
+`   ;
+
 export default function Product({ product, index }) {
   return (
-    <div key={product.id} index={index}>
-      <div style={{ display: 'flex', justifyContent: 'start', padding: 2 }}>
-        <span>
-          <small>
-            #{product.id}
-            {'  '}
-          </small>
-        </span>
-      </div>
-      <div>
-        <TextContent>{product.product}</TextContent>
-      </div>
-      <div>
-        <TextContent>{product.varietal}</TextContent>
-      </div>
-      <Icons>
+    <Container>
+      <img border="0" src={product.small} alt="name" width="304" height="228" />
+      <ProductDetails>
         <div>
-          <Avatar
-            onClick={() => console.log(product)}
-            src={'https://joesch.moe/api/v1/random?key=' + product.id}
-          />
+          <ProductName>{product.product}</ProductName>
         </div>
-      </Icons>
-    </div >
+        <div>
+          <Varietal>{product.varietal}</Varietal>
+        </div>
+        <div>
+          <Appellation>{product.appellation}</Appellation>
+        </div>
+        <div>
+          <Styles>{product.style}</Styles>
+        </div>
+      </ProductDetails>
+    </Container>
   );
 }

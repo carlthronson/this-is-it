@@ -7,7 +7,7 @@ const TextContent = styled.div``;
 
 export default function Page({ wines}) {
   return <div>
-    <ht>ShopEase</ht>
+    <h1>ShopEase</h1>
     <div>
       <SearchResult></SearchResult>
     </div>
