@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='-r next-logger' next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
     "test": "next dev"
   },
   "author": "",
