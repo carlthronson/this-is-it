@@ -7,7 +7,7 @@ const TextContent = styled.div``;
 
 export default function Page({ wines}) {
   return <div>
-    <ht>Kanban Board Demo</ht>
+    <h1>Kanban Board Demo</h1>
     <div>
       <KanbanBoard></KanbanBoard>
     </div>
