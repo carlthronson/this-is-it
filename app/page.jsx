@@ -15,6 +15,11 @@ export default function Page() {
           ShopEase
         </Link>
       </div>
+      <div>
+        <Link href="/job-search">
+          Job Search Results
+        </Link>
+      </div>
     </div>
   );
 }
