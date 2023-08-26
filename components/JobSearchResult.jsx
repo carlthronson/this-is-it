@@ -30,9 +30,9 @@ export default function JobSearchResult() {
       <ol>
         {jobDescriptions.map((jobDescription, index) => (
           <li>
-            <Link href={jobDescription.jobUrl}>{jobDescription.companyName}</Link>
+            {/* <Link href={jobDescription.jobUrl}>{jobDescription.companyName}</Link> */}
+            <JobDescription key={index} index={index} job={jobDescription} />
           </li>
-          // <JobDescription key={index} index={index} jobDescription={jobDescription} />
         ))}
       </ol>
 
