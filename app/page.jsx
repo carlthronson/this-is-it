@@ -20,6 +20,11 @@ export default function Page() {
           Job Search Results
         </Link>
       </div>
+      <div>
+        <Link href="/bookmarks">
+          Bookmarks
+        </Link>
+      </div>
     </div>
   );
 }
