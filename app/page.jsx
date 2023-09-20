@@ -6,6 +6,11 @@ export default function Page() {
     <div>
       <h1>Hello World, This is the home page of this app!</h1>
       <div>
+        <Link href="/odin-recipes">
+          Odin Recipes
+        </Link>
+      </div>
+      <div>
         <Link href="/kanban-board">
           Kanban Board
         </Link>
