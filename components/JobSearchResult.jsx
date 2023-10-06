@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import JobDescription from './JobDescription';
+import MyCompany from './MyCompany';
 import styled from 'styled-components';
-import Link from "next/link";
 
-const JobDescriptionList = styled.div`
+const CompanyList = styled.div`
     padding: 3px;
   transistion: background-color 0.2s ease;
   background-color: #f4f5f7;
@@ -13,30 +12,29 @@ const JobDescriptionList = styled.div`
 
 export default function JobSearchResult() {
   { /* State */ }
-  const [jobDescriptions, setJobDescriptions] = useState([]);
+  const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
+    console.log("useEffect");
     fetch('./jobDescriptions.json')
       .then((response) => response.json())
       .then((json) => {
-        setJobDescriptions(json.filter((jobDescription) => true));
+        setCompanies(json.filter((company) => true));
       });
   }, []);
 
   const TextContent = styled.div``;
 
   return (
-    <JobDescriptionList>
+    <div>
       <ol>
-        {jobDescriptions.map((jobDescription, index) => (
-          <li>
-            {/* <Link href={jobDescription.jobUrl}>{jobDescription.companyName}</Link> */}
-            <JobDescription key={index} index={index} job={jobDescription} />
-          </li>
-        ))}
+      {companies.map((item, index) => (
+        <li>
+        <MyCompany key={index} index={index} company={item} />
+        </li>
+      ))}
       </ol>
-
-    </JobDescriptionList>
+    </div>
   );
 }
 
