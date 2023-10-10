@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === 'POST') {
     let job = JSON.parse(req.body);
     console.log("******* HELLO ************");
@@ -10,9 +10,12 @@ export default function handler(req, res) {
       }
       // file written successfully
     });
-    fs.readFile('test.txt', (err, data) => { console.log(data) })
     res.status(200).json({ message: job.title })
   } else {
-    res.status(200).json({ message: 'Hello from Next.js!' })
+    // Use fs.readFile() method to read the file 
+    console.log('********** here');
+    const fileContents = await fs.readFile('./test.txt', 'utf8');
+    res.status(200).json({ message: JSON.stringify(fileContents) });
+    // res.status(200).json({ message: 'Hello from Next.js!' })
   }
 }

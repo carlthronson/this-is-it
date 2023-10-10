@@ -33,7 +33,7 @@ export default function MyJobSearchGroup({ companyGroup, index }) {
       <section {...getCollapseProps()}>
         <ol>
           {companyGroup.companies.map((item, index) => (
-            <li>
+            <li key={index}>
               <MyCompany key={index} index={index} company={item} />
             </li>
           ))}
