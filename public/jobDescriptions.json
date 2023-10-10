@@ -3,7 +3,7 @@
   "companies" : [ {
     "sourceName" : null,
     "companyName" : "#twiceasnice Recruiting",
-    "companySize" : "",
+    "companySize" : "2",
     "jobs" : [ {
       "sourceName" : null,
       "status" : "1 - new",
