@@ -45,6 +45,7 @@ export default function MyCompany({ company, index }) {
         <Container>
             <CompanyHeader {...getToggleProps()}>
                 <CompanyName>{company.companyName}</CompanyName>
+                <TextContent>{company.companySize + ' employees'}</TextContent>
                 <div style={{ display: 'flex', justifyContent: 'start', padding: 2 }}></div>
                 {/* Number of jobs: {company.jobs.length} */}
                 <button>{isExpanded ? 'Hide' : 'View'}</button>
